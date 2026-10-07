@@ -1,0 +1,102 @@
+:root{
+  --ink:#2b2620; --ink-soft:#5c5348; --paper:#f5efe3; --paper2:#efe6d4;
+  --qin:#7a5c3e; --qin-dark:#4d3826; --seal:#9c3b2e; --jade:#3f6e5c; --line:#d8cbb4;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Noto Serif SC","Songti SC","SimSun",serif;
+  color:var(--ink); background:var(--paper); line-height:1.75;
+}
+header.site{
+  background:linear-gradient(180deg,#3a2c1e,#4d3826);
+  color:#f0e6d2; padding:22px 28px 16px; border-bottom:4px double #b09a72;
+}
+header.site h1{margin:0;font-size:26px;letter-spacing:6px;font-weight:600}
+header.site .sub{color:#cbb891;font-size:13px;letter-spacing:2px;margin-top:4px}
+nav.tabs{display:flex;gap:4px;flex-wrap:wrap;padding:0 24px;background:var(--paper2);border-bottom:1px solid var(--line)}
+nav.tabs button{
+  font-family:inherit;font-size:15px;letter-spacing:3px;background:none;border:none;
+  padding:12px 18px;color:var(--ink-soft);cursor:pointer;border-bottom:3px solid transparent;
+}
+nav.tabs button.active{color:var(--seal);border-bottom-color:var(--seal);font-weight:700}
+main{max-width:1080px;margin:0 auto;padding:24px 28px 80px}
+.card{background:#fbf7ee;border:1px solid var(--line);border-radius:6px;padding:18px 22px;margin:14px 0;box-shadow:0 1px 3px rgba(77,56,38,.08)}
+.card h2,.card h3{margin-top:0}
+.timeline{position:relative;padding-left:26px;border-left:2px solid var(--line)}
+.timeline .ev{position:relative;margin:0 0 22px}
+.timeline .ev::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--seal);border:2px solid var(--paper)}
+.timeline .era{color:var(--seal);font-weight:700;letter-spacing:2px}
+.timeline .period{color:var(--ink-soft);font-size:13px;margin-left:8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.school{border-top:3px solid var(--qin);background:#fbf7ee;border:1px solid var(--line);border-radius:4px;padding:14px 18px}
+.school h3{margin:0 0 6px;color:var(--qin-dark)}
+.school .meta{font-size:13px;color:var(--ink-soft)}
+.tag{display:inline-block;background:var(--paper2);border:1px solid var(--line);border-radius:20px;padding:1px 10px;margin:3px 4px 0 0;font-size:12.5px}
+.term{border-left:4px solid var(--jade);padding:10px 16px;background:#fbf7ee;margin:10px 0;border-radius:0 4px 4px 0}
+.term .py{color:var(--ink-soft);font-size:13px}
+.term .src{font-size:12px;color:var(--qin);margin-top:4px}
+button.btn, .btn{
+  font-family:inherit;font-size:14px;background:var(--qin);color:#f7efdd;border:1px solid var(--qin-dark);
+  border-radius:4px;padding:7px 16px;cursor:pointer;letter-spacing:2px;
+}
+button.btn:hover{background:var(--qin-dark)}
+button.btn.ghost{background:transparent;color:var(--qin-dark)}
+button.btn.danger{background:var(--seal);border-color:#732a20}
+button.btn:disabled{opacity:.45;cursor:not-allowed}
+input,select,textarea{
+  font-family:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);
+  border-radius:4px;background:#fffdf7;color:var(--ink);width:100%;
+}
+label.fld{display:block;margin:8px 0;font-size:13.5px;color:var(--ink-soft)}
+label.fld input,label.fld select,label.fld textarea{margin-top:3px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--ink-soft);font-size:13px}
+.seal{color:var(--seal)}
+.ok{color:var(--jade);font-weight:700}
+.bad{color:var(--seal);font-weight:700}
+.pill{font-size:12px;border-radius:12px;padding:1px 10px;border:1px solid}
+.pill.ok{background:#e6f0ea;border-color:var(--jade)}
+.pill.bad{background:#f6e6e2;border-color:var(--seal)}
+.pill.warn{background:#f6efdc;border-color:#b08a2e;color:#7a5a12}
+/* 学习路线图 */
+.graph-wrap{overflow-x:auto;padding-bottom:10px}
+.graph-svg{min-width:760px}
+.node-box{fill:#fbf7ee;stroke:var(--qin);stroke-width:1.5;rx:6}
+.node-box.done{fill:#e4efe9;stroke:var(--jade)}
+.node-box.locked{opacity:.62}
+.node-box.fundamental{stroke-width:2.4}
+.node-label{font-size:13px;fill:var(--ink);font-family:inherit}
+.node-sub{font-size:11px;fill:var(--ink-soft)}
+.edge{stroke:var(--ink-soft);stroke-width:1.4;fill:none;marker-end:url(#arrow)}
+.edge.shared{stroke:var(--seal)}
+.legend{font-size:12.5px;color:var(--ink-soft)}
+/* 谱例 / 媒体 */
+.section-row{display:flex;align-items:flex-start;gap:10px;border-bottom:1px dashed var(--line);padding:10px 4px}
+.section-row.active{background:#f3ead6;border-radius:4px}
+.check{margin-top:4px;width:18px;height:18px;accent-color:var(--jade);cursor:pointer}
+.notation{white-space:pre-wrap}
+audio.qin-audio{width:100%;margin:10px 0}
+.speedbar button{font-size:12.5px;padding:3px 9px;margin-right:6px}
+.mig-table{border-collapse:collapse;width:100%;font-size:13.5px}
+.mig-table th,.mig-table td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--qin-dark);color:#f4ead6;padding:10px 18px;border-radius:6px;font-size:14px;opacity:0;transition:.3s;pointer-events:none;max-width:360px;z-index:99}
+.toast.show{opacity:1}
+dialog{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:22px;max-width:560px;width:90%}
+code{background:var(--paper2);padding:1px 6px;border-radius:3px;font-size:13px}
+.login-strip{position:absolute;top:18px;right:24px;text-align:right;font-size:13px;color:#cbb891}
+.login-strip a,.login-strip button{color:#f0e6d2;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;text-decoration:underline}
+.admin-panel{border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin:12px 0;background:#fbf7ee}
+.admin-panel h3{margin:0 0 8px;color:var(--qin-dark)}
+table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+table.data th,table.data td{border:1px solid var(--line);padding:5px 9px;text-align:left;vertical-align:top}
+table.data th{background:var(--paper2)}
+pre.json{background:#efe8d8;padding:10px;border-radius:4px;overflow:auto;font-size:12px;max-height:340px}
+@media print{
+  header.site,nav.tabs,.no-print,.speedbar,.login-strip,#toast{display:none !important}
+  body{background:#fff}
+  main{max-width:none;padding:0}
+  .card{box-shadow:none;border-color:#999;break-inside:avoid}
+  .print-only{display:block}
+}
+.print-only{display:none}

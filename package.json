@@ -1,0 +1,14 @@
+{
+  "name": "guqin-learning-site",
+  "version": "1.0.0",
+  "description": "古琴学习资料站：琴史/流派/谱例/音频 + 术语来源先修关系管理 + 进度同步",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

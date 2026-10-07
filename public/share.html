@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>分享谱例 · 丝桐</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site"><h1 style="font-size:20px">丝桐 · 分享谱例</h1><div class="sub">内容受服务端许可控制</div></header>
+<main style="max-width:760px"><div class="card" id="box"><p class="muted">正在校验分享令牌…</p></div></main>
+<script src="/js/api.js"></script>
+<script>
+(async function () {
+  const p = new URLSearchParams(location.search);
+  const box = document.getElementById('box');
+  try {
+    const d = await Api.get(`/api/shared/${p.get('score')}?v=${p.get('v')}&t=${p.get('t')}`);
+    box.innerHTML = `<h2>${d.title}</h2><p class="muted">${d.attribution} · ${d.version}</p>
+      <p class="muted">此为只读分享页（无音频、不可打印，授权失效后链接自动作废）。</p>
+      ${d.sections.map((s) => `<div class="section-row"><div><b>${s.title}</b><div class="notation muted">${s.notation}</div></div></div>`).join('')}`;
+  } catch (e) {
+    box.innerHTML = `<h2 class="bad">无法查看分享内容</h2><p>${e.data && e.data.error === 'LICENSE_EXPIRED' ? '该谱例版本的授权已到期，分享链接已失效。' : '分享链接无效、被撤销或令牌不匹配。'}</p>
+      <p><a class="btn" href="/">返回首页</a></p>`;
+  }
+})();
+</script>
+</body>
+</html>
