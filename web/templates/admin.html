@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}后台 · 丝桐课{% endblock %}
+{% block content %}
+<h1>管理后台</h1>
+<div class="tabs">
+  <button id="tab-dep" class="active">依赖缺项</button>
+  <button id="tab-mig">版本迁移结果</button>
+  <button id="tab-rel">发布事件</button>
+</div>
+<div id="pane-dep"><div id="dep-body" class="muted">加载中…</div></div>
+<div id="pane-mig" style="display:none">
+  <div class="row no-print" style="max-width:420px"><div>
+    <label>按目标版本筛选（版本ID）</label><input id="mig-filter" placeholder="如 2"></div>
+    <div style="flex:0"><button class="btn" id="btn-mig-go">筛选</button></div></div>
+  <div id="mig-body" class="muted" style="margin-top:10px"></div>
+</div>
+<div id="pane-rel" style="display:none"><div id="rel-body" class="muted"></div></div>
+<div id="not-admin" class="alert err" style="display:none">需要管理员账号（admin / admin123）。</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/admin.js"></script>
+{% endblock %}

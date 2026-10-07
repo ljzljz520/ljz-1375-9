@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}我的进度 · 丝桐课{% endblock %}
+{% block content %}
+<h1>我的学习进度</h1>
+<div class="grid2">
+  <div class="card">
+    <h3>本机（匿名 / 离线）</h3>
+    <p class="small muted">设备标识：<code id="dev-id"></code><br>匿名标识：<code id="anon-id"></code></p>
+    <p>待同步事件：<b id="pending">0</b> 条</p>
+    <div class="row">
+      <div style="flex:0"><button class="btn" id="btn-sync">同步进度到账号</button></div>
+      <div style="flex:0"><button class="btn secondary" id="btn-merge-top">登录后合并匿名进度</button></div>
+    </div>
+    <p class="small muted">两个设备各自离线勾选后同步，服务端按 <code>client_event_id</code> 幂等去重，
+       并比较「事件合并」与「最后修改覆盖」；不一致在下方冲突区裁决。</p>
+  </div>
+  <div class="card">
+    <h3>跨设备一致性</h3>
+    <p id="login-hint" class="small muted">登录后显示服务端权威投影（事件合并结果）。</p>
+    <p>实体总数：<b id="ent-count">—</b> · 冲突：<b id="conflict-count" style="color:#9c3b2e">—</b></p>
+    <button class="ghost" id="btn-refresh">拉取最新</button>
+  </div>
+</div>
+
+<h2 style="margin-top:26px">冲突裁决 <span class="small muted">（事件合并 vs 最后修改覆盖）</span></h2>
+<div id="conflicts"><p class="muted">暂无冲突</p></div>
+
+<h2 style="margin-top:26px">完成明细（服务端权威投影）</h2>
+<div style="overflow-x:auto"><table id="states">
+  <thead><tr><th>类型</th><th>实体</th><th>事件合并</th><th>最后修改覆盖</th><th>最后事件时间</th><th>来源设备</th><th>说明</th></tr></thead>
+  <tbody></tbody>
+</table></div>
+
+<div id="anon-list">
+  <h2 style="margin-top:26px">本机待同步记录（预览）</h2>
+  <div style="overflow-x:auto"><table><thead><tr><th>实体</th><th>动作</th><th>事件时间</th><th>设备</th></tr></thead>
+  <tbody id="anon-body"></tbody></table></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/progress_page.js"></script>
+{% endblock %}

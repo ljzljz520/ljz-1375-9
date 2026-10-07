@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}学习路线 · 丝桐课{% endblock %}
+{% block content %}
+<h1>学习路线（依赖图）</h1>
+<p class="muted">多个节点可共享同一先修节点。勾选完成；新增先修关系时服务端做循环检测，自环与成环均拒绝。</p>
+<div id="nodes" class="cards"></div>
+<h2 style="margin-top:28px">先修关系</h2>
+<div id="edges" class="graph"></div>
+<div class="card no-print" style="margin-top:18px">
+  <h3>新增先修关系（管理员）</h3>
+  <div class="row">
+    <div><label>节点（要学习的）</label><select id="edge-node"></select></div>
+    <div><label>先修节点（需先完成）</label><select id="edge-prereq"></select></div>
+    <div style="flex:0"><button class="btn" id="btn-add-edge">添加</button></div>
+  </div>
+  <div id="edge-msg"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/route.js"></script>
+{% endblock %}

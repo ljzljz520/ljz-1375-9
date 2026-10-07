@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}术语 · 丝桐课{% endblock %}
+{% block content %}
+<h1>术语与来源</h1>
+<div class="tabs">
+  <button id="tab-terms" class="active">术语</button>
+  <button id="tab-sources">来源 / 参考文献</button>
+</div>
+<div id="pane-terms">
+  <div class="row no-print" style="margin-bottom:12px">
+    <div style="max-width:300px"><input id="q" placeholder="检索术语或释义…"></div>
+  </div>
+  <div id="admin-terms" class="no-print"></div>
+  <div id="terms" class="cards"></div>
+</div>
+<div id="pane-sources" style="display:none">
+  <div id="admin-sources" class="no-print"></div>
+  <div id="sources" class="cards"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/glossary.js"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}分享谱例 · 丝桐课{% endblock %}
+{% block content %}
+<div id="root" data-token="{{ token }}"><p class="muted">校验分享许可中…</p></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/player.js"></script>
+<script src="/static/js/share.js"></script>
+{% endblock %}

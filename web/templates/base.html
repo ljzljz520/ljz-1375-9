@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}丝桐课 · 古琴学习资料站{% endblock %}</title>
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="/">丝桐课<span class="sub">· 古琴学习资料站</span></a></div>
+  <nav class="mainnav">
+    <a href="/history">琴史</a>
+    <a href="/schools">流派</a>
+    <a href="/glossary">术语</a>
+    <a href="/scores">谱例</a>
+    <a href="/route">学习路线</a>
+    <a href="/progress">我的进度</a>
+    <a href="/admin">后台</a>
+  </nav>
+  <div id="authbox" class="authbox"></div>
+</header>
+<main class="container">
+{% block content %}{% endblock %}
+</main>
+<footer class="footer">
+  <span>丝桐课 · 减字谱 / 打谱 / 琴学 —— 无音频亦可阅读与打印</span>
+  <button id="btn-print" class="ghost" type="button">打印本页</button>
+</footer>
+<script src="/static/js/storage.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/sync.js"></script>
+<script src="/static/js/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

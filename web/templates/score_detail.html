@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}谱例 · 丝桐课{% endblock %}
+{% block content %}
+<div id="root" data-sid="{{ score_id }}"><p class="muted">加载中…</p></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/player.js"></script>
+<script src="/static/js/score_detail.js"></script>
+{% endblock %}

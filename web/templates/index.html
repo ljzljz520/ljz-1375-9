@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>丝桐课 · 古琴学习资料站</h1>
+  <p>琴者，琴也。君子养德之器，禁邪以正心。本站系统呈现<b>琴史</b>、<b>流派</b>、<b>谱例</b>与<b>音频</b>，
+     并以依赖图组织学习路线；支持减字谱版本迁移判定、跨设备进度去重与冲突处理。
+     无音频亦可完整阅读谱例；打印与分享由服务端许可控制。</p>
+  <p class="small" style="opacity:.85">演示账号：admin / admin123（管理员） · student / stud1234（普通用户）。未登录时进度匿名保存在本机，登录后可一键合并到账号。</p>
+</section>
+<div class="cards">
+  <a class="card" href="/history"><h3>琴史</h3><p class="small muted">自先秦滥觞、汉魏定制、唐宋兴盛至近现代打谱与新生。</p></a>
+  <a class="card" href="/schools"><h3>流派</h3><p class="small muted">虞山、广陵、蜀、九嶷、诸城、梅庵——传谱与风格。</p></a>
+  <a class="card" href="/glossary"><h3>术语 · 来源</h3><p class="small muted">减字谱、打谱、滚拂、二十四况；琴谱琴论书目（后台可管理）。</p></a>
+  <a class="card" href="/scores"><h3>谱例 · 音频</h3><p class="small muted">《流水》《梅花三弄》《关山月》，减速/段落跳转与谱段锚点按媒体时间同步。</p></a>
+  <a class="card" href="/route"><h3>学习路线</h3><p class="small muted">允许共享先修节点的依赖图；新增先修关系自动检测循环。</p></a>
+  <a class="card" href="/progress"><h3>我的进度</h3><p class="small muted">匿名本地保存 / 账号同步 / 事件合并与最后修改覆盖对照、冲突裁决。</p></a>
+  <a class="card" href="/admin"><h3>管理后台</h3><p class="small muted">术语与来源持久管理、发布与回退、依赖缺项、版本迁移结果。</p></a>
+</div>
+{% endblock %}
